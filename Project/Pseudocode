@@ -1,0 +1,261 @@
+1.
+        Declare Str1 : String ← ""
+        Declare Cha1 : Char ← ''
+        Declare cha2 : Integer ← 64
+        Declare cha3 : Integer ← 0
+        Declare x : Integer ← 0
+        Declare total : Integer ← 0
+        OUTPUT("Enter your Phrase to Check if its Pangram or Not: ")
+        INPUT Str1
+        Str1 ← UPPER(Str1)
+        For x ← 1 To Len(Str1)
+            cha2 ← cha2 + 1
+            cha3 ← LOCATE(Str1, CHAR(cha2))
+            If cha3 > 0 
+                Then
+                Cha1 ← Mid(Str1, cha3)
+                If Asc(Cha1) ← cha2 
+                    Then
+                    total ← total + 1
+                End If
+            End If
+        Next x
+        If total >= 26 Then
+            OUTPUT("Its a Pangram")
+        Else
+            OUTPUT("Not A Pangram")
+        End If
+2.
+        Declare Str1 : String ← ""
+        Declare ostr : String ← ""
+        Declare rov : Char ← ''
+        Declare cha : Char ← ''
+        Declare x : Integer ← 0
+        Declare rep : Char ← ''
+        Output("Type in your Phrase: ")
+        Input Str1 
+        Str1 ← Lower(Str1)
+        (Note:It will replace character no matter it is Upper and Lower case)
+        Output("What do you want to Remove: ")
+        Input rov 
+        rov ← Lower(rov)
+        Output("What do you want to replace it with:")
+        Input rep 
+        rep ← Lower(rep)
+        For x ← 1 To Len(Str1)
+            cha ← Mid(Str1, x, 1)
+            If cha ← rov Then
+                ostr ← ostr & rep
+            Else
+                ostr ← ostr & cha
+            End If
+        Next x
+        Output("YOUR RESULT: " & ostr)
+
+
+
+3.
+        Declare Str1 : String ← ""
+        Declare Cha : Char ← ''
+        Declare count : Integer ← 0
+        Declare schar : Char ← ''
+        Declare x : Integer ← 0
+        Output("Enter Phrase: ")
+        Input Str1
+        Output("Enter character you want to Count: ")
+        Input Cha 
+        (Note:It will count Upper and Lower case as one)
+        For x ← 1 To Len(Str1)
+            schar ← Mid(Str1, x)
+            If schar ← Lower(Cha) Or schar ← Upper(Cha) Then
+                count ← count + 1
+            End If
+        Next x
+        Output(Cha & " comes " & count & " times")
+4.
+        Declare  Str1 : String ← ""
+        Declare  Mchar : Char ← ''
+        Declare  tchar : Integer ← 0
+        Declare  ptchar : Integer ← 0
+        Declare  cha1 : Char ← ''
+        Declare  ASCII : Integer ← 64
+        Declare  x : Integer ← 0
+        Output("Enter Your Phrase: ")
+        Input Str1 
+        Str1 ← Upper(Str1)
+        (Note:It will count Upper and Lower case as one)
+        For ASCII ← 64 To 90
+            tchar ← 0
+            For x ← 1 To Len(Str1)
+                cha1 ← Mid(Str1, x)
+                If Asc(cha1) ← ASCII Then
+                    tchar ← tchar + 1
+                End If
+                If ptchar < tchar Then
+                    Mchar ← cha1
+                    ptchar ← tchar
+                End If
+            Next x
+        Next ASCII
+        Output("Character used most Number of times: " & Mchar)
+5.        
+        Declare str1 : String ← ""
+        Declare a, e, i, o, u, x : Integer
+        Declare Cha : Char ← ''
+        a ← 0
+        e ← 0
+        i ← 0
+        o ← 0
+        u ← 0
+        x ← 0
+        Output("Enter Your Phrase: ")
+        Input str1
+        str1 ← Upper(str1)
+        For x ← 1 To Len(str1)
+            Cha ← Mid(str1, x)
+           Case Cha Of
+                Case 'A'
+                    a ← a + 1
+                Case 'E'
+                    e ← e + 1
+                Case 'I'
+                    i ← i + 1
+                Case 'O'
+                    o ← o + 1
+                Case 'E'
+                    u ← u + 1
+            End Case
+        Next
+        Output("Vowel A appears " & a & " times")
+        Output("Vowel E appears " & e & " times")
+        Output("Vowel I appears " & i & " times")
+        Output("Vowel O appears " & o & " times")
+        Output("Vowel U appears " & u & " times")
+6.
+        Declare count As Integer ← 0
+        Output("Number of Dounts: ")
+        Input count 
+        If count >= 1 And count <= 9 Then
+            Output("No. of Dounts: " & Str(count))
+        Else
+            Output("No. of Dount: Many")
+        End If
+7.        
+        Declare s : String ← ""
+        Declare pstr1 : String ← ""
+        Declare pstr2 : String ← ""
+        Declare sp : Integer ← 0
+        Output("Enter your Phrase: ")
+        Input s 
+        sp ← Locate(s, " ")
+        If Len(s) > 2 Then
+            pstr1 ← Left(s, 2)
+            If sp <> 0 Then
+                pstr2 ← Mid(s, sp - 2, 2)
+                s ← pstr1 & pstr2
+            Else
+                pstr2 ← Right(s, 2)
+            End If
+            s ← pstr1 & pstr2
+        End If
+        Output("Your Result: " & s)
+8.        
+        Declare s : String = ""
+        Declare fchar : Char = ''
+        Declare cha : Char = ''
+        Declare os : String = ""
+        Declare x : Integer = 0
+        Output("Your Phrase: ")
+        Input s 
+        s = LCase(s)
+        fchar = Left(s, 1)
+        os = fchar
+        For x = 2 To Len(s)
+            cha = Mid(s, x, 1)
+            If cha = fchar Then
+                os = os & "*"
+            Else
+                os = os & cha
+            End If
+        Next
+        Output("Your Result: " & os)
+9.
+        Declare a As String = ""
+        Declare b As String = ""
+        Declare ao As String = ""
+        Declare bo As String = ""
+        Output("Enter String 1: ")
+        Input a 
+        Output("Enter String 2: ")
+        Input b 
+        ao = Left(b, 2) & Right(a, Len(a) - 2)
+        bo = Left(a, 2) & Right(b, Len(b) - 2)
+        Output("Your Result: " & ao & " " & bo)
+10.
+        Declare str1 : String = ""
+        Declare os : String = ""
+        Declare ing : Integer = 0
+        Output("Enter your Phrase: ")
+        Input str1 
+        ing ← InStr(str1, "ing")
+        If ing <> 0 And Len(str1) >= 3 Then
+            str1 ← Left(str1, ing - 1) & "ly"
+        ElseIf Len(str1) >= 3 Then
+            str1 ← str1 & "ing"
+        End If
+        Output("Your Result: " & str1)
+11.
+        Declare str1 : String ← ""
+        Declare no : Integer ← 0
+        Declare bad : Integer ← 0
+        Output("Enter Your Phrase: ")
+        Input str1 
+        str1 ← Upper(Left(str1, 1)) & Lower(Right(str1, Len(str1) - 1)) 
+        no ← Locate(str1, "not")
+        bad ← Locate(no, str1, "bad")
+        If no <> 0 And bad <> 0 Then
+            str1 ← Left(str1, no - 1) & "good" & Right(str1, Len(str1) - bad - 2)
+        End If
+        Output("Your Result: " & str1)
+12.
+        Declare str1[1:15] : String
+        Declare mt2 : Integer ← 0
+        Declare sfl : Integer ← 0
+        Declare son : Boolean ← #False#
+        Declare x : Integer ← 0
+        Declare y : Integer ← 0
+        str1[1] ← "I"
+        str1[2] ← "AM"
+        str1[3] ← "TO"
+        str1[4] ← "LEARN"
+        str1[5] ← "BONG"
+        str1[6] ← "GILL"
+        str1[7] ← "BORING"
+        str1[8] ← "GRILL"
+        str1[9] ← "HELL"
+        str1[10] ← "THIS"
+        str1[11] ← "IS"
+        str1[12] ← "MY"
+        str1[13] ← "TOWN"
+        str1[14] ← "GIRL"
+        str1[15] ← "BOY"
+        For x ← 1 To 15
+            son ← #False#
+            If Len(str1(x)) >= 2 Then
+                mt2 ← mt2 + 1
+            End If
+            For y ← 1 To 15
+                If Left(str1(x), 1) ← Left(str1(y), 1) And Right(str1(x), 1) ← Right(str1(y), 1) And x <> y 
+                    Then
+                    son ← #True#
+                End If
+            Next y
+            If son ← #True# Then
+                sfl ← sfl + 1
+            End If
+        Next x
+        Output("Have more Than Two Character: " & mt2)
+        Output("First and Last Character are the Same: " & sfl)
+        
+
+        
