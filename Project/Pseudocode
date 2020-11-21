@@ -14,13 +14,14 @@
             If cha3 > 0 
                 Then
                 Cha1 ← Mid(Str1, cha3)
-                If Asc(Cha1) ← cha2 
+                If Asc(Cha1) = cha2 
                     Then
                     total ← total + 1
                 End If
             End If
         Next x
-        If total >= 26 Then
+        If total >= 26 
+        Then
             OUTPUT("Its a Pangram")
         Else
             OUTPUT("Not A Pangram")
@@ -44,7 +45,8 @@
         rep ← Lower(rep)
         For x ← 1 To Len(Str1)
             cha ← Mid(Str1, x, 1)
-            If cha ← rov Then
+            If cha = rov 
+            Then
                 ostr ← ostr & rep
             Else
                 ostr ← ostr & cha
@@ -67,7 +69,8 @@
         (Note:It will count Upper and Lower case as one)
         For x ← 1 To Len(Str1)
             schar ← Mid(Str1, x)
-            If schar ← Lower(Cha) Or schar ← Upper(Cha) Then
+            If schar = Lower(Cha) Or schar = Upper(Cha) 
+            Then
                 count ← count + 1
             End If
         Next x
@@ -88,10 +91,12 @@
             tchar ← 0
             For x ← 1 To Len(Str1)
                 cha1 ← Mid(Str1, x)
-                If Asc(cha1) ← ASCII Then
+                If Asc(cha1) = ASCII 
+                Then
                     tchar ← tchar + 1
                 End If
-                If ptchar < tchar Then
+                If ptchar < tchar 
+                Then
                     Mchar ← cha1
                     ptchar ← tchar
                 End If
@@ -135,7 +140,8 @@
         Declare count As Integer ← 0
         Output("Number of Dounts: ")
         Input count 
-        If count >= 1 And count <= 9 Then
+        If count >= 1 And count <= 9 
+        Then
             Output("No. of Dounts: " & Str(count))
         Else
             Output("No. of Dount: Many")
@@ -150,7 +156,8 @@
         sp ← Locate(s, " ")
         If Len(s) > 2 Then
             pstr1 ← Left(s, 2)
-            If sp <> 0 Then
+            If sp <> 0 
+            Then
                 pstr2 ← Mid(s, sp - 2, 2)
                 s ← pstr1 & pstr2
             Else
@@ -160,47 +167,50 @@
         End If
         Output("Your Result: " & s)
 8.        
-        Declare s : String = ""
-        Declare fchar : Char = ''
-        Declare cha : Char = ''
-        Declare os : String = ""
-        Declare x : Integer = 0
+        Declare s : String ← ""
+        Declare fchar : Char ← ''
+        Declare cha : Char ← ''
+        Declare os : String ← ""
+        Declare x : Integer ← 0
         Output("Your Phrase: ")
         Input s 
-        s = LCase(s)
-        fchar = Left(s, 1)
-        os = fchar
-        For x = 2 To Len(s)
-            cha = Mid(s, x, 1)
-            If cha = fchar Then
-                os = os & "*"
+        s ← Lower(s)
+        fchar ← Left(s, 1)
+        os ← fchar
+        For x ← 2 To Len(s)
+            cha ← Mid(s, x, 1)
+            If cha = fchar 
+            Then
+                os ← os & "*"
             Else
                 os = os & cha
             End If
         Next
         Output("Your Result: " & os)
 9.
-        Declare a As String = ""
-        Declare b As String = ""
-        Declare ao As String = ""
-        Declare bo As String = ""
+        Declare a As String ← ""
+        Declare b As String ← ""
+        Declare ao As String ← ""
+        Declare bo As String ← ""
         Output("Enter String 1: ")
         Input a 
         Output("Enter String 2: ")
         Input b 
-        ao = Left(b, 2) & Right(a, Len(a) - 2)
-        bo = Left(a, 2) & Right(b, Len(b) - 2)
+        ao ← Left(b, 2) & Right(a, Len(a) - 2)
+        bo ← Left(a, 2) & Right(b, Len(b) - 2)
         Output("Your Result: " & ao & " " & bo)
 10.
-        Declare str1 : String = ""
-        Declare os : String = ""
-        Declare ing : Integer = 0
+        Declare str1 : String ← ""
+        Declare os : String ← ""
+        Declare ing : Integer ← 0
         Output("Enter your Phrase: ")
         Input str1 
-        ing ← InStr(str1, "ing")
-        If ing <> 0 And Len(str1) >= 3 Then
+        ing ← Locate(str1, "ing")
+        If ing <> 0 And Len(str1) >= 3 
+        Then
             str1 ← Left(str1, ing - 1) & "ly"
-        ElseIf Len(str1) >= 3 Then
+        ElseIf Len(str1) >= 3
+        Then
             str1 ← str1 & "ing"
         End If
         Output("Your Result: " & str1)
@@ -213,7 +223,8 @@
         str1 ← Upper(Left(str1, 1)) & Lower(Right(str1, Len(str1) - 1)) 
         no ← Locate(str1, "not")
         bad ← Locate(no, str1, "bad")
-        If no <> 0 And bad <> 0 Then
+        If no <> 0 And bad <> 0 
+        Then
             str1 ← Left(str1, no - 1) & "good" & Right(str1, Len(str1) - bad - 2)
         End If
         Output("Your Result: " & str1)
@@ -241,16 +252,18 @@
         str1[15] ← "BOY"
         For x ← 1 To 15
             son ← #False#
-            If Len(str1(x)) >= 2 Then
+            If Len(str1(x)) >= 2 
+            Then
                 mt2 ← mt2 + 1
             End If
             For y ← 1 To 15
-                If Left(str1(x), 1) ← Left(str1(y), 1) And Right(str1(x), 1) ← Right(str1(y), 1) And x <> y 
+                If Left(str1(x), 1) = Left(str1(y), 1) And Right(str1(x), 1) = Right(str1(y), 1) And x <> y 
                     Then
                     son ← #True#
                 End If
             Next y
-            If son ← #True# Then
+            If son = #True# 
+            Then
                 sfl ← sfl + 1
             End If
         Next x
