@@ -36,7 +36,7 @@
         Output("Type in your Phrase: ")
         Input Str1 
         Str1 ← Lower(Str1)
-        (Note:It will replace character no matter it is Upper and Lower case)
+        //Note:It will replace character no matter it is Upper and Lower case
         Output("What do you want to Remove: ")
         Input rov 
         rov ← Lower(rov)
@@ -66,7 +66,7 @@
         Input Str1
         Output("Enter character you want to Count: ")
         Input Cha 
-        (Note:It will count Upper and Lower case as one)
+        //Note:It will count Upper and Lower case as one
         For x ← 1 To Len(Str1)
             schar ← Mid(Str1, x)
             If schar = Lower(Cha) Or schar = Upper(Cha) 
@@ -86,7 +86,7 @@
         Output("Enter Your Phrase: ")
         Input Str1 
         Str1 ← Upper(Str1)
-        (Note:It will count Upper and Lower case as one)
+        //Note:It will count Upper and Lower case as one
         For ASCII ← 64 To 90
             tchar ← 0
             For x ← 1 To Len(Str1)
@@ -119,17 +119,11 @@
         For x ← 1 To Len(str1)
             Cha ← Mid(str1, x)
            Case Cha Of
-                Case 'A'
-                    a ← a + 1
-                Case 'E'
-                    e ← e + 1
-                Case 'I'
-                    i ← i + 1
-                Case 'O'
-                    o ← o + 1
-                Case 'E'
-                    u ← u + 1
-            End Case
+                'A': a ← a + 1
+                'E': e ← e + 1
+                'I': i ← i + 1
+                'O': o ← o + 1
+                'E': u ← u + 1
         Next
         Output("Vowel A appears " & a & " times")
         Output("Vowel E appears " & e & " times")
