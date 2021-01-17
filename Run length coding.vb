@@ -17,8 +17,7 @@
                 End If
             Loop Until (cha <> Mid(str1, y, 1))
             Console.Write(cha & " " & count & " ")
-        Loop Until (y >= Len(str1))
+        Loop Until (y > Len(str1))
         Console.ReadKey()
     End Sub
-
 End Module
